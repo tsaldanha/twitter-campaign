@@ -1,17 +1,16 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Items', {
-      id: {
+    return queryInterface.createTable('Votes', {
+      ItemId: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: { model: 'Items', key: 'id' }
       },
-      name: {
-        type: Sequelize.STRING
-      },
-      hashtag: {
+      twitter_id: {
+        allowNull: false,
+        primaryKey: true,
         type: Sequelize.STRING
       },
       createdAt: {
@@ -21,14 +20,10 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      },
-      CampaignId: {
-        type: Sequelize.INTEGER,
-        references: { model: 'Campaigns', key: 'id' }
       }
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Items');
+    return queryInterface.dropTable('Votes');
   }
 };

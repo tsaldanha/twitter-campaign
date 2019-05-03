@@ -17,7 +17,7 @@ module.exports = {
       queryInterface.bulkInsert('Campaigns', [{
         name: 'Cabelo Sedoso',
         description: 'Campanha de Demonstração para a Cabelo Sedoso',
-        hashtag: '#maisShampooSedoso',
+        hashtag: 'maisShampooSedoso',
         active: false,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -30,10 +30,10 @@ module.exports = {
       });
 
       return await queryInterface.bulkInsert('Items', [
-        {name: 'Maça', hashtag: '#maça' , campaign_id: _campaign.id, createdAt: new Date(), updatedAt: new Date()},
-        {name: 'Pera', hashtag: '#Pera' , campaign_id:  _campaign.id, createdAt: new Date(), updatedAt: new Date()},
-        {name: 'Cabelos Lisos', hashtag: '#cabeloslisos' , campaign_id:  _campaign.id, createdAt: new Date(), updatedAt: new Date()},
-        {name: 'Rosas', hashtag: '#rosas' , campaign_id:  _campaign.id, createdAt: new Date(), updatedAt: new Date()},
+        {name: 'Maça', hashtag: 'maça' , CampaignId: _campaign.id, createdAt: new Date(), updatedAt: new Date()},
+        {name: 'Pera', hashtag: 'pera' , CampaignId:  _campaign.id, createdAt: new Date(), updatedAt: new Date()},
+        {name: 'Cabelos Lisos', hashtag: 'cabeloslisos' , CampaignId:  _campaign.id, createdAt: new Date(), updatedAt: new Date()},
+        {name: 'Rosas', hashtag: 'rosas' , CampaignId:  _campaign.id, createdAt: new Date(), updatedAt: new Date()},
       ], {});
   },
 

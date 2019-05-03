@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     active: DataTypes.BOOLEAN
   }, {});
   Campaign.associate = function(models) {
-    // associations can be defined here
+    Campaign.hasMany(models.Item);
   };
   return Campaign;
 };

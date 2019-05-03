@@ -5,7 +5,9 @@ module.exports = (sequelize, DataTypes) => {
     hashtag: DataTypes.STRING
   }, {});
   Item.associate = function(models) {
-    Item.belongsTo(models.Campaign, {foreignKey: 'campaign_id', hooks: true});
+    Item.belongsTo(models.Campaign, {foreignKey: 'CampaignId', hooks: true});
+    Item.hasMany(models.Vote);
   };
+
   return Item;
 };
